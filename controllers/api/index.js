@@ -1,0 +1,10 @@
+const router = require("express").Router();
+
+const Trails = require("../../models/trails");
+
+const ratingroutes = require('./ratingroutes');
+const trailsroutes = require('./trailsroutes');
+
+
+router.use("./ratingroutes", Rating);
+router.use("./trailsroutes", Trails);

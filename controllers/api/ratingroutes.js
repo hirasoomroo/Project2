@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Rating } = require('./models');
-const withAuth = require('../../utils/auth');
+
 
 //get comments
 router.get('/', (req, res) => {
@@ -14,10 +14,10 @@ router.get('/', (req, res) => {
 )
 //add new comments
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     if (req.session) {
       Rating.create({
-        comment_text: req.body.comment_text,
+        rating_text: req.body.rating_text,
         hiking_id: req.body.hiking_id,
         user_id: req.session.user_id,
       })
@@ -31,7 +31,7 @@ router.post('/', withAuth, (req, res) => {
   
 //delete comments
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
   Rating.destroy({
       where: {
         id: req.params.id

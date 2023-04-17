@@ -3,9 +3,9 @@
 
 * As a hiker, I want to be able to create an account.
 
-* As a hiker, I want to be able to create and view location data such as trail maps.
+* As a hiker, I want to be able to create and view the trails I have been on before.
 
-* As a hiker, I want to view elevation profiles
+
 
 * As a hiker, I want to view other reviews and ratings from other users
 
