@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { Rating } = require('./models');
+const { Rating } = require('../../models');
 
 
-//get comments
+//get rating
 router.get('/', (req, res) => {
     Rating.findAll({})
     .then(dbRatingData =>res.json(dbRatingData))
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     })
 }
 )
-//add new comments
+//add new rating
 
 router.post('/', (req, res) => {
     if (req.session) {
@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
     }
   });
   
-//delete comments
+//delete rating
 
 router.delete('/:id', (req, res) => {
   Rating.destroy({

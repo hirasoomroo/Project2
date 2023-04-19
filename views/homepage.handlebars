@@ -1,0 +1,24 @@
+<!-- Loop over each object in the ratings array -->
+{{#each ratings as |ratings| }}
+<div class="row mb-4 rating">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/ratings/{{ratings.id}}">{{ratings.name}}</a>
+    </h2>
+    <p>
+      <span for="img" aria-label="stars">💲</span>
+      <!-- Pass rating value to the helper function -->
+      <span class="rating-system">{{format_amount rating-system}}</span>
+      needed!
+    </p>
+    <p>Created by {{ratings.user.name}} on {{format_date rating-system_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{ratings.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
