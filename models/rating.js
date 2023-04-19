@@ -18,6 +18,10 @@ Rating.init(
           key: 'id'
         }
       },
+      ratings: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
       hiking_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
