@@ -22,7 +22,7 @@ Rating.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'post',
+          model: 'trails',
           key: 'id'
         }
       }
