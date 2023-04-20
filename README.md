@@ -23,8 +23,3 @@ Application includes user authentication (express-session and cookies).
 
 Application uses at least one new library, package, or technology not covered in class.
 # Project-2
-# project-2
-# project2
-# project2
-# project2
-# project2
