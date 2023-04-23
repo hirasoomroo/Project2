@@ -1,6 +1,11 @@
-const Rating = require("./rating");
-const Trails = require("./trails");
 const User = require("./user");
+const Trails = require("./trails");
+const Rating = require("./rating");
+
+User.hasOne(Rating,{
+  foreignKey:"user_id"
+  },
+);
 
 Rating.belongsToMany(Trails, {
   // Define the third table needed to store the foreign keys
@@ -22,4 +27,5 @@ Trails.belongsToMany(Rating, {
   as: "Trails_location",
 });
 
-module.exports = { Rating, Trails, User };
+
+module.exports = { User, Trails, Rating};
