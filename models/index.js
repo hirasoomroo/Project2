@@ -2,30 +2,21 @@ const User = require("./user");
 const Trails = require("./trails");
 const Rating = require("./rating");
 
-User.hasOne(Rating,{
-  foreignKey:"user_id"
-  },
-);
-
-Rating.belongsToMany(Trails, {
-  // Define the third table needed to store the foreign keys
-  through: {
-    model: User,
-    unique: false,
-  },
-  // Define an alias for when data is retrieved
+User.belongsToMany(Trails, {
+  through: Rating,
+  foreignKey: "user_id",
   as: "planned_Hikes",
 });
 
-Trails.belongsToMany(Rating, {
-  // Define the third table needed to store the foreign keys
-  through: {
-    model: User,
-    unique: false,
-  },
-  // Define an alias for when data is retrieved
+Trails.belongsToMany(User, {
+  through: Rating,
+  foreignKey: "trail_id",
   as: "Trails_location",
 });
 
+Rating.belongsTo(User, {
+  foreignKey: "user_id",
+  
+});
 
 module.exports = { User, Trails, Rating};
