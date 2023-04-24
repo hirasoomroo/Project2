@@ -10,7 +10,7 @@ User.belongsToMany(Trails, {
 
 Trails.belongsToMany(User, {
   through: Rating,
-  foreignKey: "trail_id",
+  foreignKey: "hiking_id",
   as: "Trails_location",
 });
 
