@@ -5,8 +5,6 @@
 
 * As a hiker, I want to be able to create and view the trails I have been on before.
 
-
-
 * As a hiker, I want to view other reviews and ratings from other users
 
 
@@ -23,3 +21,8 @@ Application includes user authentication (express-session and cookies).
 
 Application uses at least one new library, package, or technology not covered in class.
 # Project-2
+
+
+Make sure to run an env file with db_name, db_user: root db_password: "password"
+run an npm install
+SOURCE the database.
