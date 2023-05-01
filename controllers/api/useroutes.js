@@ -5,9 +5,8 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
-      id: req.body.id,
  
-      username: req.body.email,
+      username: req.body.name,
       email: req.body.email,
       password: req.body.password,
     });
@@ -58,12 +57,14 @@ router.post('/login', async (req, res) => {
 
 // Logout
 router.post('/logout', (req, res) => {
+  console.log('init')
   if (req.session.loggedIn) {
+    req.session.loggedIn=false
     req.session.destroy(() => {
       res.status(204).end();
     });
   } else {
-    res.status(404).end();
+    res.status(204).end();
   }
 });
 

@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hiking Adventures!</title>
@@ -11,15 +17,21 @@
 
 <body>
   <div class="flex-column justify-space-around">
+     <div id="map"></div>
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
         
         <a href="/">Hiking Adventures!</a>
       </h1>
+
+
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        
+        <a href="/logout">logout</a> 
+        
+        
         <button class="no-button" id="logout">logout</button>
         {{else}}
         
@@ -38,7 +50,7 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  {{!-- <script src="/js/logout.js"></script> --}}
+  
   {{/if}}
 </body>
 
