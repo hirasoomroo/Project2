@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hiking Adventures!</title>
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 
 <body>
@@ -22,7 +22,8 @@
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="css/js/login.js">login</a>
+        
+        <a href="/login">login</a>
         {{/if}}
       </nav>
     </header>
@@ -37,7 +38,7 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  {{!-- <script src="/js/logout.js"></script> --}}
   {{/if}}
 </body>
 
