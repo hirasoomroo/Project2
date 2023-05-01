@@ -1,22 +1,58 @@
+      {{#if session.loggedIn}}
 
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>My Homepage</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+      #map {
+        height: 400px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+      }
 
-<!-- Loop over each object in the ratings array -->
-{{#each ratings as |ratings| }}
-<div class="row mb-4 rating">
-  <div class="col-md-5">
-    <h2>
-  
-      <span for="img" aria-label="stars">💲</span>
-      <!-- Pass rating value to the helper function -->
-      <span class="rating-system">{{format_amount rating}}</span>
-      needed!
-    </p>
-    <p>Created by {{ratings.user.name}} on {{format_date rating-system_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{ratings.description}}
-    </p>
-  </div>
-</div>
-{{/each}}
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <footer>
+      <div style="margin-top: 5px; height: 33px;">Hikking Adventure &copy; 2023</div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        var map = L.map('map').setView([latitude, longitude], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+          maxZoom: 18,
+        }).addTo(map);
+
+        var marker = L.marker([latitude, longitude]).addTo(map);
+      });
+    </script>
+  </body>
+</html>
+{{else}}
+
+<div></div>
+
+      {{/if}}
