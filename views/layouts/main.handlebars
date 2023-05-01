@@ -2,12 +2,6 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-     crossorigin=""/>
-     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-     crossorigin=""></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hiking Adventures!</title>
@@ -17,41 +11,55 @@
 
 <body>
   <div class="flex-column justify-space-around">
-     <div id="map"></div>
     <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        
-        <a href="/">Hiking Adventures!</a>
-      </h1>
+    <nav style="background-color: #d2d2f1; display: flex; align-items:center; height: 60px;">
+  <div style="display: flex; align-items:center; justify-content:space-around; width: 100%; max-width: 1200px; margin: 0 auto;">
+    <a href="/" style="text-decoration: none;">
+      <h3 style="color: black; margin: 0;">Hiking Adventure</h3>
+    </a>
+
+    <div style="display: flex; align-items:center">
+      {{#if session.loggedIn}}
+        <ul style="display: flex; list-style: none; margin: 0; padding: 0;">
+          <li style="margin-right: 20px;">
+            <a href="/profile" style="text-decoration: none; color: black;">Profile</a>
+          </li>
+          <li>
+            <a  href="#" id="reload" style="text-decoration: none; color: black;">Logout</a>
+          </li>
+        </ul>
+      {{else}}
+        <ul style="display: flex; list-style: none; margin: 0; padding: 0;">
+          <li style="margin-right: 20px;">
+            <a href="/login" style="text-decoration: none; color: black;">Login</a>
+          </li>
+          <li>
+            <a href="/login" style="text-decoration: none; color: black;">Sign Up</a>
+          </li>
+        </ul>
+      {{/if}}
+    </div>
+
+    <form style="display: flex; align-items: center;">
+      <input type="search" placeholder="Search..." style="padding: 5px; margin-right: 5px; border-radius: 5px; border: 2px solid gray; font-size: 16px; width: 250px;">
+      <button style="padding: 10px 20px; border-radius: 5px; border: none;">Search</button>
+    </form>
+  </div>
+</nav>
 
 
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        
-        <a href="/logout">logout</a> 
-        
-        
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <footer>
-      
+
     </footer>
   </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  
-  {{/if}}
 </body>
 
 </html>
+
+<script src="../css/js/logout.js"></script>
