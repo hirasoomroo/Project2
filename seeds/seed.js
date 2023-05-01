@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const { Rating, Trails, User} = require('../models');
 
-const hikingeedData = require('./hikingSeedData.json');
+const hikingSeedData = require('./hikingSeedData.json');
 const locationSeedData = require('./locationSeedData.json');
 
 const seedDatabase = async () => {
