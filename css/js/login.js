@@ -1,49 +1,61 @@
-const loginFormHandler = async (event) => {
-  event.preventDefault();
 
-  // Collect values from the login form
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
 
-  if (email && password) {
-    // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+const loginForm = document.querySelector('.login-form');
+const signupForm = document.querySelector('.signup-form');
 
-    if (response.ok) {
-      // If successful, redirect the browser to the logout page
-      document.location.replace('/logout');
-    } else {
-      alert(response.statusText);
+// login form submit
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = document.querySelector('#email-login').value;
+  const password = document.querySelector('#password-login').value;
+
+  fetch('/api/users/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+    headers: { 'Content-Type': 'application/json' }
+  })
+  .then(res => {
+    if (!res.ok) {
+      throw new Error('Login failed.');
     }
-  }
-};
+    return res.json();
+  })
+  .then(data => {
+    console.log(data);
+    alert('Login successful.');
+    window.location.href="/"
+  })
+  .catch(err => {
+    console.error(err);
+    alert('Login failed.');
+  });
+});
 
-const signupbutton = document.querySelector('#signup') 
-const signupFormHandler = async (event) => {
-  event.preventDefault();
+// signup form submit
+signupForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.querySelector('#name-signup').value;
+  const email = document.querySelector('#email-signup').value;
+  const password = document.querySelector('#password-signup').value;
 
-  const name = document.querySelector('#name-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
-
-  if (name && email && password) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ name, email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.replace('/logout');
-    } else {
-      alert(response.statusText);
+  fetch('/api/users/', {
+    method: 'POST',
+    body: JSON.stringify({ name, email, password }),
+    headers: { 'Content-Type': 'application/json' }
+  })
+  .then(res => {
+    if (!res.ok) {
+      throw new Error('Signup failed.');
     }
-  }
-};
-
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+    return res.json();
+  })
+  .then(data => {
+    console.log(data);
+    alert('Signup successful.');
+    window.location.href="/"
+  })
+  .catch(err => {
+    console.error(err);
+    alert('Signup failed.');
+  });
+});
