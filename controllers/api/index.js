@@ -6,7 +6,7 @@ const ratingroutes = require('./ratingroutes');
 const trailsroutes = require('./trailsroutes');
 
 
-router.use('/rating', ratingroutes); // where /rating is simply the name of the route you see on the url
+router.use('/rating', ratingroutes); 
 router.use('/trails', trailsroutes);
 
 module.exports = router;

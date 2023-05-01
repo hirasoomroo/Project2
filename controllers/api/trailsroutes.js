@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
     const trailData = await trails.create({
       trail_name: req.body.trails_name,
       description: req.body.description,
-      guest_name: req.body.guest_name,
+      user_name: req.body.user_name,
 
     });
     res.status(200).json(trailData);
@@ -25,7 +25,7 @@ router.put('/:id', async (req, res) => {
       {
         trail_name: req.body.trail_name,
         description: req.body.description,
-        guest_name: req.body.guest_name,
+        user_name: req.body.user_name,
         
       },
       {
