@@ -10,7 +10,7 @@ Hiking adventures takes you to a place you've been to a million times, but helps
 
 * As a hiker, I want to view other reviews and ratings from other users
 
-
+<img width="1172" alt="image" src="https://user-images.githubusercontent.com/120343929/235567331-44a116e6-af45-43e4-8e51-d58847f4bfde.png">
 
 ***LIVE WEBSITE****
 <img width="1172" alt="Screenshot 2023-05-01 at 7 35 00 PM" src="https://user-images.githubusercontent.com/120343929/235567981-9e9510be-26d6-44f1-bccd-c10652a38059.png">
