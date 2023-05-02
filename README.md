@@ -22,9 +22,13 @@ Application is backed by a MySQL database with a Sequelize ORM and protects API 
 Application includes user authentication (express-session and cookies).
 
 Application uses at least one new library, package, or technology not covered in class.
-# Project-2
 
 
-Make sure to run an env file with db_name, db_user: root db_password: "password"
-run an npm install
+
+Make sure to run an .env file with: 
+db_name 
+db_user: root 
+db_password: "password"
+Run <img width="232" alt="image" src="https://user-images.githubusercontent.com/120343929/235568248-f1fb1288-5dc2-40ec-a9e5-ffb666d471df.png">
+
 SOURCE the database.
