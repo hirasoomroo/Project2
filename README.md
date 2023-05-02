@@ -1,3 +1,5 @@
+DESCRIPTION
+Hiking adventures takes you to a place you've been to a million times, but helps you keep track of what locations you have been to, and want to go to. It will be a tracker for your hiking activities!
 
 ## User Stories
 
@@ -7,6 +9,9 @@
 
 * As a hiker, I want to view other reviews and ratings from other users
 
+
+
+***LIVE WEBSITE****
 <img width="1172" alt="Screenshot 2023-05-01 at 7 35 00 PM" src="https://user-images.githubusercontent.com/120343929/235567981-9e9510be-26d6-44f1-bccd-c10652a38059.png">
 
 
