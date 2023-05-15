@@ -38,3 +38,7 @@ db_password: "password"
 Run <img width="232" alt="image" src="https://user-images.githubusercontent.com/120343929/235568248-f1fb1288-5dc2-40ec-a9e5-ffb666d471df.png">
 
 SOURCE the database.
+
+
+**FUTURE DEPLOYMENT**
+MAKING THE RATINGS WORK- for users to log in and be able to assign a rating to a certain hiking spot.
